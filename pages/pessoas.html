@@ -45,6 +45,40 @@
             </div>
         </header>
         <hr>
+
+        <div class="card-filtros">
+            <h3>Consultas e Filtros</h3>
+            <form action="" method="get">
+                <div class="filtro-nome">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome...">
+                </div>
+                <div class="filtro-comunidade">
+                    <label for="comunidade">Comunidade:</label>
+                    <select name="comunidade">
+                        <option value="">Selecione...</option>
+                        <option value="comunidade2">Comunidade 2</option>
+                        <option value="comunidade3">Comunidade 3</option>
+                    </select>
+                </div>
+                <div class="filtro-grupo">
+                    <label for="grupo">Grupo:</label>
+                    <select name="grupo">
+                        <option value="">Selecione...</option>
+                        <option value="grupo2">Grupo 2</option>
+                        <option value="grupo3">Grupo 3</option>
+                    </select>
+                </div>
+                <div class="filtro-data">
+                    <label for="data">Data:</label>
+                    <input type="date" name="data">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
+                    <button class="btn-res" type="reset"><img src="../assets/reset-svgrepo-com.svg" alt="">Limpar Filtros</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
