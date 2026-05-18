@@ -153,3 +153,48 @@ header {
 .post-btn button img {
     height: 30px;
 }
+
+main {
+    /* height: 215px; */
+    margin: 10px;
+    /* padding: 25px; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main h3 {
+    padding: 25px 0 0 25px;
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+}
+
+table th,
+table td {
+    border: none;
+}
+
+.thead-titulo {
+    background-color: #e9e9e9;
+}
+
+.celula-titulo {
+    height: 40px;
+    /* text-align: justify; */
+    /* background-color: rgb(120, 111, 245); */
+}
+
+tbody tr {
+    height: 40px;
+    border-bottom: #2c3e504b solid 1px;
+}
+
+tbody td {
+    text-align: center;
+}
