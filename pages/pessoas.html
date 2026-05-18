@@ -94,7 +94,7 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <!-- <tbody>
                     <tr class="celula-dados">
                         <td>Maria Silva Ferreira da Costa</td>
                         <td>(31) 99999-9999</td>
@@ -216,10 +216,51 @@
                         </td>
                     </tr>
                     </tr>
-                    <!-- Mais linhas de exemplo -->
-                </tbody>
+                </tbody> -->
             </table>
         </main>
     </div>
+
+    <div class="modal-create">
+        <div class="modal-content">
+            <h3>Adiconar nova pessoa</h3>
+            <form action="" class="form-modal">
+                <div class="input-pessoa">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome completo...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="whatsapp">WhatsApp:</label>
+                    <input type="text" name="whatsapp" placeholder="Digite o número do WhatsApp...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" name="endereco" placeholder="Digite o endereço...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="comunidade">Comunidade:</label>
+                    <select name="comunidade">
+                        <option value="">Selecione...</option>
+                        <option value="comunidade2">Comunidade 2</option>
+                        <option value="comunidade3">Comunidade 3</option>
+                    </select>
+                </div>
+                <div class="input-pessoa">
+                    <label for="grupo">Grupos:</label>
+                    <select name="grupo">
+                        <option value="">Selecione...</option>
+                        <option value="grupo2">Grupo 2</option>
+                        <option value="grupo3">Grupo 3</option>
+                        <option value="grupo4">Grupo 4</option>
+                    </select>
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit">Salvar</button>
+                    <button class="btn-cancel" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+<script src="../code/eventos.js"></script>
 </html>
