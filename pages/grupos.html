@@ -21,7 +21,7 @@
         </nav>
     </aside>
 
-    <div class="main-content">
+    <div class="main-content"> 
         <header>
             <div class="titulo">
                 <h1>Grupos</h1>
@@ -41,6 +41,78 @@
             </div>
         </header>
         <hr>
+
+        <div class="card-filtros">
+            <h3>Consultas e Filtros</h3>
+            <form action="" method="get">
+                <div class="filtro-nome">
+                    <label for="nome">Nome do grupo:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome do grupo...">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
+                    <button class="btn-res" type="reset"><img src="../assets/reset-svgrepo-com.svg" alt="">Limpar Filtros</button>
+                </div>
+            </form>
+        </div>
+
+        <main>
+            <h3>Lista de Grupos</h3>
+            <br>
+            <table>
+                <thead class="thead-titulo">
+                    <tr class="celula-titulo">
+                        <th>id</th>
+                        <th>Grupo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="celula-dados">
+                        <td>1</td>
+                        <td>Grupo de Jovens</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr class="celula-dados">
+                        <td>2</td>
+                        <td>Grupo de Casais</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                        
+                    </tr>
+                    <tr class="celula-dados">
+                        <td>3</td>
+                        <td>Grupo de Idosos</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    </div>
+
+    <div class="modal-grupo-create modal-create">
+        <div class="modal-content-grupo">
+            <h3>Adiconar novo grupo</h3>
+            <form action="" class="form-modal">
+                <div class="input-pessoa">
+                    <label for="nome">Nome do grupo:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome do grupo...">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit">Salvar</button>
+                    <button class="btn-cancel" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
+<script src="../code/eventos.js"></script>
 </html>
