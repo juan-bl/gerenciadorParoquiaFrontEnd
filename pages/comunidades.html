@@ -41,6 +41,51 @@
             </div>
         </header>
         <hr>
+
+        <div class="card-filtros">
+            <h3>Consultas e Filtros</h3>
+            <form action="" method="get">
+                <div class="filtro-nome">
+                    <label for="nome">Nome da comunidade:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome da comunidade...">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
+                    <button class="btn-res" type="reset"><img src="../assets/reset-svgrepo-com.svg" alt="">Limpar Filtros</button>
+                </div>
+            </form>
+        </div>
+
+        <main>
+            <h3>Lista de Comunidades</h3>
+            <br>
+            <table>
+                <thead class="thead-titulo">
+                    <tr class="celula-titulo">
+                        <th>Id</th>
+                        <th>Comunidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+            </table>
+        </main>
+    </div>
+
+    <div class="modal-comunidade-create modal-create">
+        <div class="modal-content-comunidade">
+            <h3>Adicionar nova comunidade</h3>
+            <form action="" class="form-modal">
+                <div class="input-pessoa">
+                    <label for="nome">Nome da comunidade:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome da comunidade...">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit">Salvar</button>
+                    <button class="btn-cancel" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
+<script src="../code/eventos.js"></script>
 </html>
