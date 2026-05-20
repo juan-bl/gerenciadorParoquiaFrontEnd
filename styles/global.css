@@ -177,7 +177,41 @@ main {
 }
 
 main h3 {
-    padding: 25px 0 0 25px;
+    padding: 0 0 0 0;
+}
+
+main > div {
+    height: 70px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.btn-form button {
+    padding: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    border: none;
+    border: #2c3e504b solid 1px;
+}
+
+.btn-form button img {
+    height: 20px;
+}
+
+.btn-sub {
+    background-color: rgb(120, 111, 245);
+    color: white;
+}
+
+.btn-res {
+    background-color: white;
 }
 
 table {

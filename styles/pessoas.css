@@ -2,16 +2,10 @@
     background-color: rgb(120, 111, 245);
 }
 
-main h3 {
-    padding: 0 0 0 0;
-}
-
 main > div {
-    height: 70px;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 main > div > div {
@@ -29,7 +23,7 @@ main > div > div > button {
     border-radius: 10px;
 }
 
-.btn-form button {
+/* .btn-form button {
     padding: 15px;
     height: 40px;
     display: flex;
@@ -39,7 +33,7 @@ main > div > div > button {
     border-radius: 10px;
     border: none;
     border: #2c3e504b solid 1px;
-}
+} */
 
 .btn-form button img {
     height: 20px;
