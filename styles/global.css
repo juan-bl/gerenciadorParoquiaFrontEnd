@@ -6,17 +6,22 @@
 
 body {
     display: flex;
+    height: 100vh;
     background-color: #e9e9e9;
 }
 
 aside {
-    width: 280px;
+    width: 260px;
     height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    /* background-color: #2c3e50; */
     background-color: #1b3463;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+aside h2 {
+    text-align: center;
 }
 
 .logo {
@@ -67,13 +72,14 @@ nav a:hover {
 .main-content {
     width: 100vw;
     height: 100vh;
+    margin-left: 260px;
     display: flex;
     flex-direction: column;
 }
 
 header {
     margin: 10px;
-    padding: 25px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -122,7 +128,7 @@ header {
     height: 20px;
 }
 
-.post-btn {
+.post-btn, .get-btn {
     width: 160px;
     border-radius: 10px;
 }
@@ -143,88 +149,26 @@ header {
     height: 30px;
 }
 
-.card-filtros {
-    height: 215px;
-    margin: 10px;
-    padding: 25px;
+.get-btn button {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-form {
-    /* width: 100%; */
-    height: 200px;
-    display: flex;
-    /* gap: 20px; */
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-form div {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-}
-
-form div input {
-    padding: 5px;
-    width: 250px;
-    height: 40px;
-    border: #2c3e504b solid 1px;
-    border-radius: 10px;
-}
-
-form div select {
-    padding: 5px;
-    width: 250px;
-    height: 40px;
-    border: #2c3e504b solid 1px;
-    border-radius: 10px;
-}
-
-.btn-form {
-    
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.btn-form button {
-    /* width: 125px; */
-    padding: 15px;
-    height: 40px;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 5px;
-    border-radius: 10px;
-    border: none;
+    color: rgb(255, 255, 255);
     border: #2c3e504b solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(120, 111, 245);
 }
 
-.btn-form button img {
+.get-btn button img {
     height: 20px;
 }
 
-.btn-sub {
-    background-color: rgb(120, 111, 245);
-    color: white;
-}
-
-.btn-res {
-    background-color: white;
-}
-
 main {
-    /* height: 215px; */
     margin: 10px;
-    /* padding: 25px; */
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
@@ -253,8 +197,6 @@ table td {
 
 .celula-titulo {
     height: 40px;
-    /* text-align: justify; */
-    /* background-color: rgb(120, 111, 245); */
 }
 
 tbody tr {
@@ -263,30 +205,61 @@ tbody tr {
 }
 
 tbody td {
+    font-size: 14px;
     text-align: center;
     padding: 10px;
 }
 
-.modal-create {
+.modal-fundo {
     visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.form-modal {
+.modal-create {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.form-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-pessoa, .filtro-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-form {
+    display: flex;
+    gap: 10px;
+}
+
+.input-pessoa input, .filtro-input input, select {
+    padding: 5px;
+    width: 199px;
+    height: 40px;
+    border: #2c3e504b solid 1px;
+    border-radius: 10px;
+}
+
+.choices__inner {
+    padding: 5px;
+    width: 199px;
+    min-height: 40px;
+    border: #2c3e504b solid 1px;
+    border-radius: 10px;
 }

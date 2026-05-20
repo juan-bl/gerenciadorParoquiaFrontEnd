@@ -1,15 +1,18 @@
-function abrirModal() {
-    const modal = document.querySelector('.modal-create');
-    modal.style.visibility = 'visible';
-}
+//choices js
+const elemento1 = document.getElementById('grupos-post');
 
-function fecharModal() {
-    const modal = document.querySelector('.modal-create');
-    modal.style.visibility = 'hidden';
-}
+const choices1 = new Choices(elemento1, {
+    removeItemButton: true,
+    searchEnabled: true,
+    placeholder: true,
+    placeholderValue: 'Selecione os grupos'
+});
 
-const btnAbrirModal = document.querySelector('.post-btn');
-const btnFecharModal = document.querySelector('.btn-cancel');
+const elemento2 = document.getElementById('grupos-filtro');
 
-btnAbrirModal.addEventListener('click', abrirModal);
-btnFecharModal.addEventListener('click', fecharModal);
+const choices2 = new Choices(elemento2, {
+    removeItemButton: true,
+    searchEnabled: true,
+    placeholder: true,
+    placeholderValue: 'Selecione os grupos'
+});

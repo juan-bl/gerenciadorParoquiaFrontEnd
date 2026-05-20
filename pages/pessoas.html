@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/pessoas.css">
     <title>Gerenciador</title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <body>
     <aside>
         <div class="logo">
@@ -19,9 +21,6 @@
             <a href="grupos.html" class="grupos"><img src="../assets/grupo.svg" alt="">Grupos</a>
             <a href="comunidades.html" class="comunidades"><img src="../assets/comunidade.svg" alt="">Comunidades</a>
         </nav>
-        <!-- <div class="svg-igreja">
-            <img src="../assets/igreja.svg" alt="">
-        </div> -->
         
     </aside>
 
@@ -42,47 +41,30 @@
                         Nova Pessoa
                     </button>
                 </div>
+                <div class="get-btn">
+                    <button>
+                        <img src="../assets/google-sheets-svgrepo-com.svg" alt="">
+                        Mostrar todos
+                    </button>
+                </div>
             </div>
         </header>
         <hr>
 
-        <div class="card-filtros">
-            <h3>Consultas e Filtros</h3>
-            <form action="" method="get">
-                <div class="filtro-nome">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Digite o nome...">
-                </div>
-                <div class="filtro-comunidade">
-                    <label for="comunidade">Comunidade:</label>
-                    <select name="comunidade">
-                        <option value="">Selecione...</option>
-                        <option value="comunidade2">Comunidade 2</option>
-                        <option value="comunidade3">Comunidade 3</option>
-                    </select>
-                </div>
-                <div class="filtro-grupo">
-                    <label for="grupo">Grupo:</label>
-                    <select name="grupo">
-                        <option value="">Selecione...</option>
-                        <option value="grupo2">Grupo 2</option>
-                        <option value="grupo3">Grupo 3</option>
-                    </select>
-                </div>
-                <div class="filtro-data">
-                    <label for="data">Data:</label>
-                    <input type="date" name="data">
-                </div>
-                <div class="btn-form">
-                    <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
-                    <button class="btn-res" type="reset"><img src="../assets/reset-svgrepo-com.svg" alt="">Limpar Filtros</button>
-                </div>
-            </form>
-        </div>
-
         <main>
-            <h3>Lista de Pessoas</h3>
-            <br>
+            <div>
+                <div>
+                    <h3>Lista de Pessoas</h3>
+                    <p>Encontrados: 3</p>
+                </div>
+                
+                <div>
+                    <p>Ativos: 3</p>
+                    <button class="btn-abrir-filtros">Abrir filtros</button>
+                </div>
+                
+            </div>
+            <hr>
             <table>
                 <thead class="thead-titulo">
                     <tr class="celula-titulo">
@@ -132,9 +114,121 @@
                             <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
                         </td>
                     </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Carolina Oliveira</td>
+                        <td>(31) 97777-7777</td>
+                        <td>Praça da Liberdade, 789</td>
+                        <td>Comunidade 1</td>
+                        <td>Grupo B, Grupo C</td>
+                        <td>10/12/1995</td>
+                        <td>
+                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
+                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </main>
+    </div>
+
+    <div class="modal-fundo">
+        .
     </div>
 
     <div class="modal-create">
@@ -163,10 +257,19 @@
                 </div>
                 <div class="input-pessoa">
                     <label for="grupo">Grupos:</label>
-                    <select name="grupo">
-                        <option value="">Selecione...</option>
+                    <select name="grupo" id="grupos-post" multiple>
                         <option value="grupo2">Grupo 2</option>
                         <option value="grupo3">Grupo 3</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
+                        <option value="grupo4">Grupo 4</option>
                         <option value="grupo4">Grupo 4</option>
                     </select>
                 </div>
@@ -175,12 +278,56 @@
                     <input type="date" name="data" placeholder="Digite a data de nascimento...">
                 </div>
                 <div class="btn-form">
-                    <button class="btn-sub" type="submit">Salvar</button>
-                    <button class="btn-cancel" type="button">Cancelar</button>
+                    <button class="btn-sub" type="submit"><img src="../assets/plus.svg" alt="">Salvar</button>
+                    <button class="btn-cancel" type="reset">X Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-filtros">
+        <div class="modal-content-filtros">
+            
+            <h3>Consultas e Filtros</h3>
+            
+            <form class="form-modal" action="" method="get">
+                <div class="filtro-input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome...">
+                </div>
+                <div class="filtro-input">
+                    <label for="whatsapp">WhatsApp:</label>
+                    <input type="text" name="whatsapp" placeholder="Digite o número...">
+                </div>
+                <div class="filtro-input">
+                    <label for="comunidade">Comunidade:</label>
+                    <select name="comunidade">
+                        <option value="">Selecione...</option>
+                        <option value="comunidade2">Comunidade 2</option>
+                        <option value="comunidade3">Comunidade 3</option>
+                    </select>
+                </div>
+                <div class="filtro-input">
+                    <label for="grupo">Grupos:</label>
+                    <select name="grupo" id="grupos-filtro" multiple>
+                        <option value="">Selecione...</option>
+                        <option value="grupo2">Grupo 2</option>
+                        <option value="grupo3">Grupo 3</option>
+                    </select>
+                </div>
+                <div class="filtro-input">
+                    <label for="data">Data:</label>
+                    <input type="date" name="data">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
+                    <button class="btn-fechar-filtros" type="reset">X Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
 <script src="../code/eventos.js"></script>
+<script src="../code/modalCreate.js"></script>
+<script src="../code/modalFiltros.js"></script>
 </html>
