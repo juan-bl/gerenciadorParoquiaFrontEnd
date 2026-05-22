@@ -51,7 +51,7 @@
         <main>
             <div>
                 <h3>Lista de Grupos</h3>
-                <p>Encontrados: 3</p>
+                <p id="encontrados">Encontrados: <span>0</span></p>
             </div>
             <hr>
             <table>
@@ -62,11 +62,7 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        
-                    </tr>
-                    
+                <tbody id="tabela-grupos">
                 </tbody>
                     
             </table>
@@ -80,18 +76,22 @@
     <div class="modal-create">
         <div class="modal-content-grupo">
             <h3>Adicionar novo grupo</h3>
-            <form action="" class="form-modal">
+            <form action="" class="form-modal" id="form-grupos">
                 <div class="input-pessoa">
                     <label for="nome">Nome do grupo:</label>
-                    <input type="text" name="nome" placeholder="Digite o nome do grupo...">
+                    <input type="text" name="nome" placeholder="Digite o nome do grupo..." onclick="clearError()">
                 </div>
                 <div class="btn-form">
                     <button class="btn-sub" type="submit"><img src="../assets/plus.svg" alt=""> Salvar</button>
-                    <button class="btn-cancel" type="reset">X Cancelar</button>
+                    <button class="btn-cancel" type="reset" onclick="clearError()">X Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
 <script src="../code/modalCreate.js"></script>
+<script src="../code/grupos/grupos.js"></script>
+<script src="../code/grupos/post.js"></script>
+<script>renderizarGrupo()</script>
+<script src="../code/grupos/totalEncontrados.js"></script>
 </html>

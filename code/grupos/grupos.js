@@ -1,0 +1,1 @@
+const grupos = JSON.parse(localStorage.getItem('grupos')) || [];
