@@ -51,22 +51,18 @@
         <main>
             <div>
                 <h3>Lista de Grupos</h3>
-                <p>Encontrados: 3</p>
+                <p id="encontrados">Encontrados: <span>0</span></p>
             </div>
             <hr>
             <table>
                 <thead class="thead-titulo">
                     <tr class="celula-titulo">
                         <th>Id</th>
-                        <th>Grupo</th>
+                        <th>Comunidade</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        
-                    </tr>
-                    
+                <tbody id="tabela-comunidades">
                 </tbody>
             </table>
         </main>
@@ -79,18 +75,22 @@
     <div class="modal-create">
         <div class="modal-content-comunidade">
             <h3>Adicionar nova comunidade</h3>
-            <form action="" class="form-modal">
+            <form action="" class="form-modal" id="form-comunidade">
                 <div class="input-pessoa">
                     <label for="nome">Nome da comunidade:</label>
-                    <input type="text" name="nome" placeholder="Digite o nome da comunidade...">
+                    <input type="text" name="nome" placeholder="Digite o nome da comunidade..." onclick="clearError()">
                 </div>
                 <div class="btn-form">
                     <button class="btn-sub" type="submit"><img src="../assets/plus.svg" alt=""> Salvar</button>
-                    <button class="btn-cancel" type="reset">X Cancelar</button>
+                    <button class="btn-cancel" type="reset" onclick="clearError()">X Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
 <script src="../code/modalCreate.js"></script>
+<script src="../code/comunidade/comunidades.js"></script>
+<script src="../code/comunidade/post.js"></script>
+<script>renderizarComunidade()</script>
+<script src="../code/comunidade/totalEncontrados.js"></script>
 </html>

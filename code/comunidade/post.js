@@ -1,10 +1,10 @@
-let newGrupo = document.getElementById('form-grupos');
+let newComunidade = document.getElementById('form-comunidade');
 let cont = 0;
 
-newGrupo.addEventListener('submit', async (e) => {
+newComunidade.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (newGrupo.nome.value == '') {
+    if (newComunidade.nome.value == '') {
         const form = document.querySelector('.input-pessoa');
         const error = document.createElement('p');
         error.innerText = 'Preencha o campo nome!';
@@ -13,35 +13,35 @@ newGrupo.addEventListener('submit', async (e) => {
         return;
 
     } else {
-        const grupo = {
+        const comunidade = {
             id: cont+=1,
-            nome: newGrupo.nome.value
+            nome: newComunidade.nome.value
         }
 
-        grupos.push(grupo)
+        comunidades.push(comunidade)
 
         localStorage.setItem(
-            'grupos',
-            JSON.stringify(grupos)
+            'comunidades',
+            JSON.stringify(comunidades)
         );
 
-        renderizarGrupo();
+        renderizarComunidade();
         e.target.reset();
     }
 });
 
-function renderizarGrupo() {
+function renderizarComunidade() {
 
-    const tbody = document.getElementById('tabela-grupos');
+    const tbody = document.getElementById('tabela-comunidades');
 
     tbody.innerHTML = '';
 
-    grupos.forEach(grupo => {
+    comunidades.forEach(comunidade => {
         const linha = document.createElement('tr');
 
         linha.innerHTML = `
-        <td>${grupo.id}</td>
-        <td>${grupo.nome}</td>
+        <td>${comunidade.id}</td>
+        <td>${comunidade.nome}</td>
     `
 
     tbody.appendChild(linha);

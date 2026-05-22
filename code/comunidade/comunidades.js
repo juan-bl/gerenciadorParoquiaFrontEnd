@@ -1,0 +1,1 @@
+const comunidades = JSON.parse(localStorage.getItem('comunidades')) || [];
