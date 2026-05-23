@@ -2,6 +2,8 @@
 function abrirModalCreate() {
     const modal = document.querySelector('.modal-create');
     modal.style.visibility = 'visible';
+    atualizarTextoSelect();
+
 
     const modalFundo = document.querySelector('.modal-fundo');
     modalFundo.style.visibility = 'visible';
@@ -10,6 +12,7 @@ function abrirModalCreate() {
 function fecharModalCreate() {
     const modal = document.querySelector('.modal-create');
     modal.style.visibility = 'hidden';
+    atualizarTextoSelect();
 
     const modalFundo = document.querySelector('.modal-fundo');
     modalFundo.style.visibility = 'hidden';

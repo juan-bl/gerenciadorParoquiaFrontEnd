@@ -290,10 +290,60 @@ tbody td {
     border-radius: 10px;
 }
 
-.choices__inner {
+/* .choices__inner {
     padding: 5px;
     width: 199px;
     min-height: 40px;
     border: #2c3e504b solid 1px;
     border-radius: 10px;
+} */
+
+.multi-select {
+    position: relative;
+    width: 199px;
+    height: 40px;
+    /* border: #2c3e504b solid 1px; */
+    border-radius: 10px;
+}
+
+.select-box {
+    /* border: 1px solid #ccc; */
+    border: #2c3e504b solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.options {
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+    border: 1px solid #ccc;
+    background: white;
+
+    max-height: 200px;
+    overflow-y: auto;
+
+    z-index: 10;
+}
+
+.options.active {
+    display: block;
+}
+
+.option-item {
+    padding: 8px;
+}
+
+.option-item:hover {
+    background: #f0f0f0;
+}
+
+.option-label {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
 }

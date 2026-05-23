@@ -55,10 +55,10 @@
             <div>
                 <div>
                     <h3>Lista de Pessoas</h3>
-                    <p>Encontrados: 3</p>
+                    <p id="encontrados">Encontrados: <span>0</span></p>
                 </div>
                 <div>
-                    <p>Ativos: 3</p>
+                    <p>Ativos: 0</p>
                     <button class="btn-abrir-filtros">Abrir filtros</button>
                 </div>
             </div>
@@ -75,44 +75,7 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Maria Silva Ferreira da Costa</td>
-                        <td>(31) 99999-9999</td>
-                        <td>Rua das Flores, 123</td>
-                        <td>Comunidade 1</td>
-                        <td>Grupo A, Grupo B, Grupo C</td>
-                        <td>15/05/1990</td>
-                        <td>
-                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
-                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>João Pedro Santos</td>
-                        <td>(31) 98888-8888</td>
-                        <td>Avenida Central, 456</td>
-                        <td>Comunidade 2</td>
-                        <td>Grupo A, Grupo D</td>
-                        <td>22/08/1985</td>
-                        <td>
-                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
-                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Ana Carolina Oliveira</td>
-                        <td>(31) 97777-7777</td>
-                        <td>Praça da Liberdade, 789</td>
-                        <td>Comunidade 1</td>
-                        <td>Grupo B, Grupo C</td>
-                        <td>10/12/1995</td>
-                        <td>
-                            <button class="edit-btn"><img src="../assets/edit-svgrepo-com.svg" alt="">Editar</button>
-                            <button class="delete-btn"><img src="../assets/delete-svgrepo-com.svg" alt="">Excluir</button>
-                        </td>
-                    </tr>
-                    
+                <tbody id="tabela-pessoas">
                 </tbody>
             </table>
         </main>
@@ -125,10 +88,10 @@
     <div class="modal-create">
         <div class="modal-content-pessoa">
             <h3>Adicionar nova pessoa</h3>
-            <form action="" class="form-modal">
+            <form action="" class="form-modal" id="form-pessoas">
                 <div class="input-pessoa">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Digite o nome completo...">
+                    <input type="text" name="nome" placeholder="Digite o nome completo..." onclick="clearError()">
                 </div>
                 <div class="input-pessoa">
                     <label for="whatsapp">WhatsApp:</label>
@@ -140,37 +103,37 @@
                 </div>
                 <div class="input-pessoa">
                     <label for="comunidade">Comunidade:</label>
-                    <select name="comunidade">
-                        <option value="">Selecione...</option>
-                        <option value="comunidade2">Comunidade 2</option>
-                        <option value="comunidade3">Comunidade 3</option>
+                    <select name="comunidade" id="comunidade-post">
+                        <option value="" selected disabled>
+                            Selecione uma comunidade
+                        </option>
                     </select>
                 </div>
-                <div class="input-pessoa">
+                <!-- <div class="input-pessoa">
                     <label for="grupo">Grupos:</label>
                     <select name="grupo" id="grupos-post" multiple>
-                        <option value="grupo2">Grupo 2</option>
-                        <option value="grupo3">Grupo 3</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
-                        <option value="grupo4">Grupo 4</option>
+                        <script>selectGrupos()</script>
                     </select>
+                </div> -->
+                
+                <div name="grupo" class="multi-select">
+
+                    <div class="select-box" id="select-box">
+                        Selecionar grupos
+                    </div>
+
+                    <div class="options" id="options-grupos">
+                    </div>
+
                 </div>
+
                 <div class="input-pessoa">
                     <label for="data">Data de nascimento:</label>
                     <input type="date" name="data" placeholder="Digite a data de nascimento...">
                 </div>
                 <div class="btn-form">
                     <button class="btn-sub" type="submit"><img src="../assets/plus.svg" alt="">Salvar</button>
-                    <button class="btn-cancel" type="reset">X Cancelar</button>
+                    <button class="btn-cancel" type="reset" onclick="clearError()">X Cancelar</button>
                 </div>
             </form>
         </div>
@@ -222,7 +185,16 @@
         </div>
     </div>
 </body>
-<script src="../code/eventos.js"></script>
+
 <script src="../code/modalCreate.js"></script>
+<script src="../code/grupos/grupos.js"></script>
+<script src="../code/comunidade/comunidades.js"></script>
+<script src="../code/pessoas/pessoas.js"></script>
 <script src="../code/modalFiltros.js"></script>
+<script src="../code/pessoas/selectGrupos.js"></script>
+<script src="../code/pessoas/selectComunidades.js"></script>
+<script src="../code/eventos.js"></script>
+<script src="../code/pessoas/post.js"></script>
+<script>renderizarPessoas()</script>
+<script src="../code/pessoas/totalEncontrados.js"></script>
 </html>

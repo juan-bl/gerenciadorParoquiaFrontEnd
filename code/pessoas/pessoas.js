@@ -1,0 +1,1 @@
+const pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
