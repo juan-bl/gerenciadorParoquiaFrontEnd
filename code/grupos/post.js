@@ -36,19 +36,32 @@ function renderizarGrupo() {
 
     tbody.innerHTML = '';
 
-    grupos.forEach(grupo => {
+    grupos.forEach((grupo, index) => {
         const linha = document.createElement('tr');
-
         linha.innerHTML = `
         <td>${grupo.id}</td>
         <td>${grupo.nome}</td>
         <td class="celula-img">
-            <button><img src="../assets/edit.svg"></button>
+            <button class="update-grupo-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
             <button><img src="../assets/delete.svg"></button>
         </td>
     `
 
     tbody.appendChild(linha);
+    });
+
+    // eventos dos botões update
+    const botoesUpdate = document.querySelectorAll('.update-grupo-btn');
+
+    botoesUpdate.forEach(botao => {
+
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            abrirModalUpdateGrupo(index)
+            }
+            
+        );
+
     });
 
     

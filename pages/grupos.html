@@ -88,10 +88,29 @@
             </form>
         </div>
     </div>
+
+    <div class="modal-update">
+        <div class="modal-content-grupo">
+            <h3>Atualizar Grupo</h3>
+            <form action="" class="form-modal" id="form-update-grupos">
+                <div class="input-pessoa">
+                    <label for="nome">Nome do grupo:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome do grupo..." onclick="clearError()">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/plus.svg" alt=""> Salvar</button>
+                    <button class="btn-cancel" type="reset" onclick="fecharModalUpdateGrupo()">X Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 <script src="../code/modalCreate.js"></script>
+<!-- <script src="../code/modalUpdate.js"></script> -->
 <script src="../code/grupos/grupos.js"></script>
+<script src="../code/grupos/update.js"></script>
+
+
 <script src="../code/grupos/post.js"></script>
 <script>renderizarGrupo()</script>
-<script src="../code/grupos/totalEncontrados.js"></script>
 </html>
