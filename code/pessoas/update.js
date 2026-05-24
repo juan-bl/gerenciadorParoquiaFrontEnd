@@ -2,6 +2,29 @@ const selectBoxUpdate = document.getElementById('select-box-update');
 
 const optionsUpdate = document.getElementById('options-grupos-update');
 
+const formUpdate = document.getElementById('form-pessoas-update');
+
+formUpdate.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const gruposSelecionados = [...document.querySelectorAll('.grupo-checkbox-update:checked')].map(check => Number(check.value));
+
+    pessoas[indexEditando] = {
+        nome: document.getElementById('update-nome').value,
+        whatsapp: document.getElementById('update-whatsapp').value,
+        endereco: document.getElementById('update-endereco').value,
+        comunidade: comunidades.find(comunidade => comunidade.id == document.querySelector('.update-comunidade').value),
+        grupos: gruposSelecionados,
+        dataDeNascimento: document.getElementById('update-data').value
+    }
+
+    localStorage.setItem('pessoas', JSON.stringify(pessoas));
+
+    renderizarPessoas();
+
+    fecharModalUpdate();
+})
+
 selectBoxUpdate.addEventListener(
     'click',
     (event) => {

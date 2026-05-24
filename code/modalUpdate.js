@@ -29,12 +29,8 @@ function abrirModalUpdate(index) {
 
     document.getElementById('update-endereco').value = pessoa.endereco;
 
-    // document.getElementById('update-comunidade').value = pessoa.comunidade.id;
-
-
-    // setTimeout(() => {
-    //     console.log(document.querySelectorAll('.grupo-checkbox-update'))
-    // }, 100)
+    document.querySelector('.update-comunidade').value = pessoa.comunidade.id;
+    console.log("!");
     
         // limpa texto anterior
     const selectBoxUpdate =
@@ -54,7 +50,6 @@ function abrirModalUpdate(index) {
 
     });
 
-    // document.querySelectorAll('.grupo-checkbox-update').forEach(check => {check.checked = false;});
     
     pessoa.grupos.forEach(idGrupo => {
         modalUpdate.querySelectorAll('.grupo-checkbox-update').forEach(check => {
