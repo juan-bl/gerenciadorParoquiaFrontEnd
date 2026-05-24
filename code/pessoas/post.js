@@ -17,7 +17,7 @@ newPessoa.addEventListener('submit', async (e) => {
             whatsapp: newPessoa.whatsapp.value,
             endereco: newPessoa.endereco.value,
             comunidade: (comunidades.find(comunidade => comunidade.id == newPessoa.comunidade.value)).nome,
-            grupos: obterSelecionados().map(check => check.nome),
+            grupos: obterSelecionados(),
             dataDeNascimento: newPessoa.data.value,
         }
 
@@ -38,17 +38,23 @@ function renderizarPessoas() {
 
     const tbody = document.getElementById('tabela-pessoas');
     tbody.innerHTML = '';
-    pessoas.forEach(pessoa => {
+    pessoas.forEach((pessoa, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${pessoa.nome}</td>
         <td>${pessoa.whatsapp}</td>
         <td>${pessoa.endereco}</td>
         <td>${pessoa.comunidade}</td>
-        <td>${pessoa.grupos}</td>
+        <td>${pessoa.grupos.map(id => {
+            const grupo = grupos.find(g => g.id == id);
+            return grupo ? grupo.nome : '';
+            })
+            .join(', ')
+            }
+        </td>
         <td>${pessoa.dataDeNascimento}</td>
         <td class="celula-img">
-            <button class="update-btn"><img src="../assets/edit.svg"></button>
+            <button class="update-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
             <button><img src="../assets/delete.svg"></button>
         </td>
     `
@@ -61,9 +67,11 @@ function renderizarPessoas() {
 
     botoesUpdate.forEach(botao => {
 
-        botao.addEventListener(
-            'click',
-            abrirModalUpdate
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            abrirModalUpdate(index)
+            }
+            
         );
 
     });

@@ -184,22 +184,22 @@
     <div class="modal-update">
         <div class="modal-content-pessoa">
             <h3>Atualizar Pessoa</h3>
-            <form action="" class="form-modal" id="form-pessoas">
+            <form action="" class="form-modal" id="form-pessoas-update">
                 <div class="input-pessoa">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Digite o nome completo...">
+                    <input type="text" name="nome" placeholder="Digite o nome completo..." id="update-nome">
                 </div>
                 <div class="input-pessoa">
                     <label for="whatsapp">WhatsApp:</label>
-                    <input type="text" name="whatsapp" placeholder="Digite o número do WhatsApp...">
+                    <input type="text" name="whatsapp" placeholder="Digite o número do WhatsApp..." id="update-whatsapp">
                 </div>
                 <div class="input-pessoa">
                     <label for="endereco">Endereço:</label>
-                    <input type="text" name="endereco" placeholder="Digite o endereço...">
+                    <input type="text" name="endereco" placeholder="Digite o endereço..." id="update-endereco">
                 </div>
                 <div class="input-pessoa">
                     <label for="comunidade">Comunidade:</label>
-                    <select name="comunidade" id="comunidade-post">
+                    <select name="comunidade" id="comunidade-post" class="update-comunidade">
                         <option value="" selected disabled>
                             Selecione uma comunidade
                         </option>
@@ -207,18 +207,18 @@
                 </div>
                 
                 <div name="grupo" class="multi-select">
-                    <div class="select-box" id="select-box">
+                    <div class="select-box" id="select-box-update">
                         Selecionar grupos
                     </div>
 
-                    <div class="options" id="options-grupos">
+                    <div class="options options-grupos-update" id="options-grupos-update">
                     </div>
 
                 </div>
 
                 <div class="input-pessoa">
                     <label for="data">Data de nascimento:</label>
-                    <input type="date" name="data" placeholder="Digite a data de nascimento...">
+                    <input type="date" name="data" placeholder="Digite a data de nascimento..." id="update-data">
                 </div>
                 <div class="btn-form">
                     <button class="btn-sub" type="submit"><img src="../assets/edit2.svg" alt="">Salvar</button>
@@ -238,8 +238,8 @@
 <script src="../code/pessoas/selectComunidades.js"></script>
 <script src="../code/eventos.js"></script>
 <script src="../code/eventos2.js"></script>
-<script src="../code/pessoas/post.js"></script>
+<script src="../code/pessoas/update.js"></script>
 <script src="../code/modalUpdate.js"></script>
+<script src="../code/pessoas/post.js"></script>
 <script>renderizarPessoas()</script>
-<script src="../code/pessoas/totalEncontrados.js"></script>
 </html>

@@ -53,7 +53,7 @@ function renderizarGrupos() {
                 <input
                     type="checkbox"
                     value="${grupo.id}"
-                    class="grupo-checkbox">
+                    class="grupo-checkbox grupo-checkbox-update">
 
                 ${grupo.nome}
             </label>
@@ -76,9 +76,6 @@ function obterSelecionados() {
         '.grupo-checkbox:checked'
     )]
     .map(check => Number(check.value))
-    .map(id =>
-        grupos.find(grupo => grupo.id == id)
-    );;
 
 }
 
