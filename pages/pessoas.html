@@ -109,15 +109,8 @@
                         </option>
                     </select>
                 </div>
-                <!-- <div class="input-pessoa">
-                    <label for="grupo">Grupos:</label>
-                    <select name="grupo" id="grupos-post" multiple>
-                        <script>selectGrupos()</script>
-                    </select>
-                </div> -->
                 
                 <div name="grupo" class="multi-select">
-
                     <div class="select-box" id="select-box">
                         Selecionar grupos
                     </div>
@@ -165,13 +158,16 @@
                         <option value="comunidade3">Comunidade 3</option>
                     </select>
                 </div>
-                <div class="filtro-input">
-                    <label for="grupo">Grupos:</label>
-                    <select name="grupo" id="grupos-filtro" multiple>
-                        <option value="">Selecione...</option>
-                        <option value="grupo2">Grupo 2</option>
-                        <option value="grupo3">Grupo 3</option>
-                    </select>
+                
+                <div name="grupo-filtro" class="multi-select-filtro">
+
+                    <div class="select-box-filtro" id="select-box-filtro">
+                        Selecionar grupos
+                    </div>
+
+                    <div class="options-filtro" id="options-grupos-filtro">
+                    </div>
+
                 </div>
                 <div class="filtro-input">
                     <label for="data">Data de Nascimento:</label>
@@ -180,6 +176,53 @@
                 <div class="btn-form">
                     <button class="btn-sub" type="submit"><img src="../assets/search-white.svg" alt="">Buscar</button>
                     <button class="btn-fechar-filtros" type="reset">X Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-update">
+        <div class="modal-content-pessoa">
+            <h3>Atualizar Pessoa</h3>
+            <form action="" class="form-modal" id="form-pessoas">
+                <div class="input-pessoa">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Digite o nome completo...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="whatsapp">WhatsApp:</label>
+                    <input type="text" name="whatsapp" placeholder="Digite o número do WhatsApp...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" name="endereco" placeholder="Digite o endereço...">
+                </div>
+                <div class="input-pessoa">
+                    <label for="comunidade">Comunidade:</label>
+                    <select name="comunidade" id="comunidade-post">
+                        <option value="" selected disabled>
+                            Selecione uma comunidade
+                        </option>
+                    </select>
+                </div>
+                
+                <div name="grupo" class="multi-select">
+                    <div class="select-box" id="select-box">
+                        Selecionar grupos
+                    </div>
+
+                    <div class="options" id="options-grupos">
+                    </div>
+
+                </div>
+
+                <div class="input-pessoa">
+                    <label for="data">Data de nascimento:</label>
+                    <input type="date" name="data" placeholder="Digite a data de nascimento...">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/edit2.svg" alt="">Salvar</button>
+                    <button class="btn-cancel" id="btn-fechar-update" type="reset">X Cancelar</button>
                 </div>
             </form>
         </div>
@@ -194,7 +237,9 @@
 <script src="../code/pessoas/selectGrupos.js"></script>
 <script src="../code/pessoas/selectComunidades.js"></script>
 <script src="../code/eventos.js"></script>
+<script src="../code/eventos2.js"></script>
 <script src="../code/pessoas/post.js"></script>
+<script src="../code/modalUpdate.js"></script>
 <script>renderizarPessoas()</script>
 <script src="../code/pessoas/totalEncontrados.js"></script>
 </html>

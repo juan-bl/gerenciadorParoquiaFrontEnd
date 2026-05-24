@@ -11,7 +11,7 @@ body {
 }
 
 aside {
-    width: 260px;
+    width: 230px;
     height: 100vh;
     position: fixed;
     display: flex;
@@ -72,7 +72,7 @@ nav a:hover {
 .main-content {
     width: 100vw;
     height: 100vh;
-    margin-left: 260px;
+    margin-left: 230px;
     display: flex;
     flex-direction: column;
 }
@@ -220,6 +220,11 @@ table {
     width: 100%;
 }
 
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
 table th,
 table td {
     border: none;
@@ -244,17 +249,37 @@ tbody td {
     padding: 10px;
 }
 
+.celula-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.celula-img button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.celula-img img {
+    height: 30px;
+}
+
 .modal-fundo {
     visibility: hidden;
     width: 100%;
     height: 100%;
     position: fixed;
+    top:0;
+    left: 0;
+    z-index: 998;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-create {
+.modal-update{
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -262,7 +287,20 @@ tbody td {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    z-index: 999;
+}
+
+.modal-create {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
 .form-modal {
@@ -347,3 +385,4 @@ tbody td {
     gap: 8px;
     cursor: pointer;
 }
+

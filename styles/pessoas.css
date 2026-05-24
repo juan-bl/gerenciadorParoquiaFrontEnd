@@ -48,6 +48,56 @@ main > div > div > button {
     background-color: white;
 }
 
+.multi-select-filtro {
+    position: relative;
+    width: 199px;
+    height: 40px;
+    /* border: #2c3e504b solid 1px; */
+    border-radius: 10px;
+}
+
+.select-box-filtro {
+    /* border: 1px solid #ccc; */
+    border: #2c3e504b solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.options-filtro {
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+    border: 1px solid #ccc;
+    background: white;
+
+    max-height: 200px;
+    overflow-y: auto;
+
+    z-index: 10;
+}
+
+.options.active-filtro {
+    display: block;
+}
+
+.option-item-filtro {
+    padding: 8px;
+}
+
+.option-item-filtro:hover {
+    background: #f0f0f0;
+}
+
+.option-label-filtro {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
 .modal-content-pessoa {
     width: 400px;
     min-height: 600px;
@@ -72,6 +122,7 @@ main > div > div > button {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
 

@@ -42,13 +42,19 @@ function renderizarComunidade() {
         linha.innerHTML = `
         <td>${comunidade.id}</td>
         <td>${comunidade.nome}</td>
+        <td class="celula-img">
+            <button><img src="../assets/edit.svg"></button>
+            <button><img src="../assets/delete.svg"></button>
+        </td>
     `
 
     tbody.appendChild(linha);
     });
 
     
-    atualizarEncontrados();
+    // atualizar Encontrados
+    let total = tbody.children.length;
+    document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
 }
 

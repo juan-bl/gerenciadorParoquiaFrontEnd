@@ -20,17 +20,6 @@ newPessoa.addEventListener('submit', async (e) => {
             grupos: obterSelecionados().map(check => check.nome),
             dataDeNascimento: newPessoa.data.value,
         }
-        
-        console.log(pessoa.grupos);
-        
-        // console.log(obterSelecionados().forEach(check => grupos.filter(grupo => grupo.id == check.id)));
-        // console.log(obterSelecionados());
-        // obterSelecionados().forEach(check => console.log(check.id))
-        // console.log(pessoa.grupos);
-        
-        // obterSelecionados().forEach(check => console.log(check));
-        // console.log(comunidades);
-
 
         pessoas.push(pessoa)
 
@@ -48,12 +37,9 @@ newPessoa.addEventListener('submit', async (e) => {
 function renderizarPessoas() {
 
     const tbody = document.getElementById('tabela-pessoas');
-
     tbody.innerHTML = '';
-
     pessoas.forEach(pessoa => {
         const linha = document.createElement('tr');
-
         linha.innerHTML = `
         <td>${pessoa.nome}</td>
         <td>${pessoa.whatsapp}</td>
@@ -61,13 +47,31 @@ function renderizarPessoas() {
         <td>${pessoa.comunidade}</td>
         <td>${pessoa.grupos}</td>
         <td>${pessoa.dataDeNascimento}</td>
+        <td class="celula-img">
+            <button class="update-btn"><img src="../assets/edit.svg"></button>
+            <button><img src="../assets/delete.svg"></button>
+        </td>
     `
-
     tbody.appendChild(linha);
     });
 
+    // eventos dos botões update
+    const botoesUpdate =
+        document.querySelectorAll('.update-btn');
+
+    botoesUpdate.forEach(botao => {
+
+        botao.addEventListener(
+            'click',
+            abrirModalUpdate
+        );
+
+    });
+
     
-    atualizarEncontrados();
+    // atualizar Encontrados
+    let total = tbody.children.length;
+    document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
 }
 
