@@ -20,10 +20,10 @@ formUpdateGrupo.addEventListener(
             'grupos',
             JSON.stringify(grupos)
         );
-
+        
         renderizarGrupo();
-
         fecharModalUpdateGrupo();
+        
 
     }
 );
@@ -36,7 +36,7 @@ function abrirModalUpdateGrupo(index) {
 
     const modal =
         document.querySelector(
-            '.modal-update'
+            '.modal-update-grupo'
         );
 
         console.log(modal);
@@ -59,7 +59,7 @@ function abrirModalUpdateGrupo(index) {
 function fecharModalUpdateGrupo() {
 
     document.querySelector(
-        '.modal-update'
+        '.modal-update-grupo'
     ).style.visibility =
         'hidden';
 

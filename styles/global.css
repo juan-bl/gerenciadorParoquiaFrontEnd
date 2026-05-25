@@ -277,7 +277,9 @@ tbody td {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-update{
+.modal-update-pessoa,
+.modal-update-grupo,
+.modal-update-comunidade{
     visibility: hidden;
     position: fixed;
     top: 0;

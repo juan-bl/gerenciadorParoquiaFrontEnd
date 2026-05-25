@@ -7,7 +7,7 @@ function abrirModalUpdate(index) {
     const pessoa = pessoas[index];
 
     const modalUpdate =
-    document.querySelector('.modal-update');
+    document.querySelector('.modal-update-pessoa');
 
     modalUpdate.querySelectorAll('.grupo-checkbox-update')
     .forEach(check => {check.checked = false;});
@@ -16,7 +16,7 @@ function abrirModalUpdate(index) {
     
     
 
-    const modal = document.querySelector('.modal-update');
+    const modal = document.querySelector('.modal-update-pessoa');
     modal.style.visibility = 'visible';
 
     const modalFundo = document.querySelector('.modal-fundo');
@@ -98,7 +98,7 @@ function abrirModalUpdate(index) {
 }
 
 function fecharModalUpdate() {
-    const modal = document.querySelector('.modal-update');
+    const modal = document.querySelector('.modal-update-pessoa');
     modal.style.visibility = 'hidden';
 
     const modalFundo = document.querySelector('.modal-fundo');
