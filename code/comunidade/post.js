@@ -43,7 +43,7 @@ function renderizarComunidade() {
         <td>${comunidade.nome}</td>
         <td class="celula-img">
             <button class="update-comunidade-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button><img src="../assets/delete.svg"></button>
+            <button class="delete-comunidade-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
         </td>
     `
 
@@ -58,6 +58,21 @@ function renderizarComunidade() {
         botao.addEventListener('click', (event) => {
             const index = event.currentTarget.dataset.index;
             abrirModalUpdateComunidade(index)
+            }
+            
+        );
+
+    });
+
+    const botoesDelete =
+        document.querySelectorAll('.delete-comunidade-btn');
+
+    botoesDelete.forEach(botao => {
+
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            
+            abrirModalDeleteComunidade(index)
             }
             
         );

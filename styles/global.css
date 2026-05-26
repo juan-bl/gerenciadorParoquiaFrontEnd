@@ -279,9 +279,10 @@ tbody td {
 
 .modal-update-pessoa,
 .modal-update-grupo,
-.modal-update-comunidade{
+.modal-update-comunidade,
 .modal-delete-pessoa,
 .modal-delete-grupo,
+.modal-delete-comunidade {
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -296,6 +297,7 @@ tbody td {
 
 .modal-content-pessoa-delete,
 .modal-content-grupo-delete,
+.modal-content-comunidade-delete {
     width: 400px;
     min-height: 400px;
     padding: 20px;
@@ -311,6 +313,7 @@ tbody td {
 
 #form-delete-pessoa .btn-sub,
 #form-delete-grupo .btn-sub,
+#form-delete-comunidade .btn-sub {
     background-color: rgb(255, 0, 0);
 }
 
