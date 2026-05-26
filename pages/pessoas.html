@@ -227,6 +227,19 @@
             </form>
         </div>
     </div>
+
+    <div class="modal-delete-pessoa">
+        <div class="modal-content-pessoa-delete">
+            <h3>Deletar Pessoa</h3>
+            <form action="" class="form-modal" id="form-delete-pessoa">
+                <p>Apagar permanentemente: <strong id="nome-delete-pessoa"></strong> ?</p>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/delete-white.svg" alt=""> Deletar</button>
+                    <button class="btn-cancel" type="button" onclick="fecharModalDeletePessoa()">X Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 <script src="../code/modalCreate.js"></script>
@@ -240,6 +253,7 @@
 <script src="../code/eventos2.js"></script>
 <script src="../code/pessoas/update.js"></script>
 <script src="../code/modalUpdate.js"></script>
+<script src="../code/pessoas/delete.js"></script>
 <script src="../code/pessoas/post.js"></script>
 <script>renderizarPessoas()</script>
 </html>

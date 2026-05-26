@@ -55,7 +55,7 @@ function renderizarPessoas() {
         <td>${pessoa.dataDeNascimento}</td>
         <td class="celula-img">
             <button class="update-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button><img src="../assets/delete.svg"></button>
+            <button class="delete-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
         </td>
     `
     tbody.appendChild(linha);
@@ -70,6 +70,20 @@ function renderizarPessoas() {
         botao.addEventListener('click', (event) => {
             const index = event.currentTarget.dataset.index;
             abrirModalUpdate(index)
+            }
+            
+        );
+
+    });
+
+    const botoesDelete =
+        document.querySelectorAll('.delete-btn');
+
+    botoesDelete.forEach(botao => {
+
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            abrirModalDeletePessoa(index)
             }
             
         );
