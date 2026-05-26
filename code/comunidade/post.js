@@ -36,19 +36,32 @@ function renderizarComunidade() {
 
     tbody.innerHTML = '';
 
-    comunidades.forEach(comunidade => {
+    comunidades.forEach((comunidade, index) => {
         const linha = document.createElement('tr');
-
         linha.innerHTML = `
         <td>${comunidade.id}</td>
         <td>${comunidade.nome}</td>
         <td class="celula-img">
-            <button><img src="../assets/edit.svg"></button>
+            <button class="update-comunidade-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
             <button><img src="../assets/delete.svg"></button>
         </td>
     `
 
     tbody.appendChild(linha);
+    });
+
+    // eventos dos botões update
+    const botoesUpdate = document.querySelectorAll('.update-comunidade-btn');
+
+    botoesUpdate.forEach(botao => {
+
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            abrirModalUpdateComunidade(index)
+            }
+            
+        );
+
     });
 
     
