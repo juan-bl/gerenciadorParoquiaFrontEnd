@@ -281,6 +281,7 @@ tbody td {
 .modal-update-grupo,
 .modal-update-comunidade{
 .modal-delete-pessoa,
+.modal-delete-grupo,
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -294,7 +295,22 @@ tbody td {
 }
 
 .modal-content-pessoa-delete,
+.modal-content-grupo-delete,
+    width: 400px;
+    min-height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #form-delete-pessoa .btn-sub,
+#form-delete-grupo .btn-sub,
     background-color: rgb(255, 0, 0);
 }
 

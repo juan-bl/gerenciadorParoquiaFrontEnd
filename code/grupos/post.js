@@ -43,7 +43,7 @@ function renderizarGrupo() {
         <td>${grupo.nome}</td>
         <td class="celula-img">
             <button class="update-grupo-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button><img src="../assets/delete.svg"></button>
+            <button class="delete-grupo-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
         </td>
     `
 
@@ -58,6 +58,21 @@ function renderizarGrupo() {
         botao.addEventListener('click', (event) => {
             const index = event.currentTarget.dataset.index;
             abrirModalUpdateGrupo(index)
+            }
+            
+        );
+
+    });
+
+    const botoesDelete =
+        document.querySelectorAll('.delete-grupo-btn');
+
+    botoesDelete.forEach(botao => {
+
+        botao.addEventListener('click', (event) => {
+            const index = event.currentTarget.dataset.index;
+            
+            abrirModalDeleteGrupo(index)
             }
             
         );

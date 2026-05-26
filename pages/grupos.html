@@ -104,11 +104,25 @@
             </form>
         </div>
     </div>
+
+    <div class="modal-delete-grupo">
+        <div class="modal-content-grupo-delete">
+            <h3>Deletar Grupo</h3>
+            <form action="" class="form-modal" id="form-delete-grupo">
+                <p>Apagar permanentemente: <strong id="nome-delete-grupo"></strong> ?</p>
+                <div class="btn-form">
+                    <button class="btn-sub" type="submit"><img src="../assets/delete-white.svg" alt=""> Deletar</button>
+                    <button class="btn-cancel" type="button" onclick="fecharModalDeleteGrupo()">X Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 <script src="../code/modalCreate.js"></script>
 <!-- <script src="../code/modalUpdate.js"></script> -->
 <script src="../code/grupos/grupos.js"></script>
 <script src="../code/grupos/update.js"></script>
+<script src="../code/grupos/delete.js"></script>
 <script src="../code/grupos/post.js"></script>
 <script>renderizarGrupo()</script>
 </html>
