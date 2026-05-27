@@ -30,13 +30,13 @@ newComunidade.addEventListener('submit', async (e) => {
     }
 });
 
-function renderizarComunidade() {
+function renderizarComunidade(lista = comunidades) {
 
     const tbody = document.getElementById('tabela-comunidades');
 
     tbody.innerHTML = '';
 
-    comunidades.forEach((comunidade, index) => {
+    lista.forEach((comunidade, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${comunidade.id}</td>
