@@ -34,11 +34,11 @@ newPessoa.addEventListener('submit', async (e) => {
     }
 });
 
-function renderizarPessoas() {
+function renderizarPessoas(lista = pessoas) {
 
     const tbody = document.getElementById('tabela-pessoas');
     tbody.innerHTML = '';
-    pessoas.forEach((pessoa, index) => {
+    lista.forEach((pessoa, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${pessoa.nome}</td>
