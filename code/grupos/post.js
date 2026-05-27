@@ -30,13 +30,13 @@ newGrupo.addEventListener('submit', async (e) => {
     }
 });
 
-function renderizarGrupo() {
+function renderizarGrupo(lista = grupos) {
 
     const tbody = document.getElementById('tabela-grupos');
 
     tbody.innerHTML = '';
 
-    grupos.forEach((grupo, index) => {
+    lista.forEach((grupo, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${grupo.id}</td>
