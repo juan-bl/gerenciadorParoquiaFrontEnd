@@ -29,7 +29,7 @@ function abrirModalUpdate(index) {
 
     document.getElementById('update-endereco').value = pessoa.endereco;
 
-    document.querySelector('.update-comunidade').value = pessoa.comunidade.id;
+    document.querySelector('.update-comunidade').value = pessoa.comunidade;
     console.log("!");
     
         // limpa texto anterior

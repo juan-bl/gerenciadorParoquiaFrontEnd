@@ -13,7 +13,7 @@ formUpdate.addEventListener('submit', (e) => {
         nome: document.getElementById('update-nome').value,
         whatsapp: document.getElementById('update-whatsapp').value,
         endereco: document.getElementById('update-endereco').value,
-        comunidade: comunidades.find(comunidade => comunidade.id == document.querySelector('.update-comunidade').value),
+        comunidade: parseInt(document.querySelector('.update-comunidade').value),
         grupos: gruposSelecionados,
         dataDeNascimento: document.getElementById('update-data').value
     }

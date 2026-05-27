@@ -16,7 +16,7 @@ newPessoa.addEventListener('submit', async (e) => {
             nome: newPessoa.nome.value,
             whatsapp: newPessoa.whatsapp.value,
             endereco: newPessoa.endereco.value,
-            comunidade: comunidades.find(comunidade => comunidade.id == newPessoa.comunidade.value),
+            comunidade: parseInt(newPessoa.comunidade.value),
             grupos: obterSelecionados(),
             dataDeNascimento: newPessoa.data.value,
         }
@@ -44,7 +44,11 @@ function renderizarPessoas() {
         <td>${pessoa.nome}</td>
         <td>${pessoa.whatsapp}</td>
         <td>${pessoa.endereco}</td>
-        <td>${pessoa.comunidade.nome}</td>
+        <td>${(() => {
+            const comunidadeEncontrada = comunidades.find(c => c.id == pessoa.comunidade);
+            return comunidadeEncontrada ? comunidadeEncontrada.nome : '';
+        })
+        ()}</td>
         <td>${pessoa.grupos.map(id => {
             const grupo = grupos.find(g => g.id == id);
             return grupo ? grupo.nome : '';
