@@ -34,11 +34,20 @@ newPessoa.addEventListener('submit', async (e) => {
     }
 });
 
+let paginaAtual = 1;
+const itensPorPagina = 3;
+
 function renderizarPessoas(lista = pessoas) {
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+
+    const fim = inicio + itensPorPagina;
+
+    const pagina = lista.slice(inicio, fim);
 
     const tbody = document.getElementById('tabela-pessoas');
     tbody.innerHTML = '';
-    lista.forEach((pessoa, index) => {
+    pagina.forEach((pessoa, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${pessoa.nome}</td>
@@ -99,6 +108,8 @@ function renderizarPessoas(lista = pessoas) {
     let total = tbody.children.length;
     document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
+
+    renderizarPaginacao(lista)
 }
 
 function clearError() {

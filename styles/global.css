@@ -413,3 +413,22 @@ tbody td {
     cursor: pointer;
 }
 
+#paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#paginacao button {
+    width: 30px;
+    height: 30px;
+    border: #00000042 solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* background: white; */
+}
+
+.pagina-ativa {
+    background-color: #4f46e5;
+    color: white;
+}
