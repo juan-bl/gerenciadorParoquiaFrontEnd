@@ -1,5 +1,4 @@
 let newComunidade = document.getElementById('form-comunidade');
-let cont = 0;
 
 newComunidade.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -14,7 +13,7 @@ newComunidade.addEventListener('submit', async (e) => {
 
     } else {
         const comunidade = {
-            id: cont+=1,
+            id: Date.now(),
             nome: newComunidade.nome.value
         }
 
@@ -42,8 +41,8 @@ function renderizarComunidade(lista = comunidades) {
         <td>${comunidade.id}</td>
         <td>${comunidade.nome}</td>
         <td class="celula-img">
-            <button class="update-comunidade-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button class="delete-comunidade-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
+            <button class="update-comunidade-btn" data-id="${comunidade.id}"><img src="../assets/edit.svg"></button>
+            <button class="delete-comunidade-btn" data-id="${comunidade.id}"><img src="../assets/delete.svg"></button>
         </td>
     `
 
@@ -56,7 +55,8 @@ function renderizarComunidade(lista = comunidades) {
     botoesUpdate.forEach(botao => {
 
         botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
+            const id = Number(event.currentTarget.dataset.id);
+            const index = comunidades.findIndex(comunidade => comunidade.id == id);
             abrirModalUpdateComunidade(index)
             }
             
@@ -70,8 +70,8 @@ function renderizarComunidade(lista = comunidades) {
     botoesDelete.forEach(botao => {
 
         botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
-            
+            const id = Number(event.currentTarget.dataset.id);
+            const index = comunidades.findIndex(comunidade => comunidade.id == id);
             abrirModalDeleteComunidade(index)
             }
             

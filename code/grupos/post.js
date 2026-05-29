@@ -1,5 +1,4 @@
 let newGrupo = document.getElementById('form-grupos');
-let cont = 0;
 
 newGrupo.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -14,7 +13,7 @@ newGrupo.addEventListener('submit', async (e) => {
 
     } else {
         const grupo = {
-            id: cont+=1,
+            id: Date.now(),
             nome: newGrupo.nome.value
         }
 
@@ -42,8 +41,8 @@ function renderizarGrupo(lista = grupos) {
         <td>${grupo.id}</td>
         <td>${grupo.nome}</td>
         <td class="celula-img">
-            <button class="update-grupo-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button class="delete-grupo-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
+            <button class="update-grupo-btn" data-id="${grupo.id}"><img src="../assets/edit.svg"></button>
+            <button class="delete-grupo-btn" data-id="${grupo.id}"><img src="../assets/delete.svg"></button>
         </td>
     `
 
@@ -56,7 +55,8 @@ function renderizarGrupo(lista = grupos) {
     botoesUpdate.forEach(botao => {
 
         botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
+            const id = Number(event.currentTarget.dataset.id);
+            const index = grupos.findIndex(grupo => grupo.id == id);
             abrirModalUpdateGrupo(index)
             }
             
@@ -70,7 +70,8 @@ function renderizarGrupo(lista = grupos) {
     botoesDelete.forEach(botao => {
 
         botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
+            const id = Number(event.currentTarget.dataset.id);
+            const index = grupos.findIndex(grupo => grupo.id == id);
             
             abrirModalDeleteGrupo(index)
             }
