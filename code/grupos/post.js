@@ -30,7 +30,7 @@ newGrupo.addEventListener('submit', async (e) => {
 });
 
 let paginaAtual = 1;
-const itensPorPagina = 3;
+const itensPorPagina = 10;
 
 function renderizarGrupo(lista = grupos) {
 

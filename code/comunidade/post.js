@@ -29,13 +29,20 @@ newComunidade.addEventListener('submit', async (e) => {
     }
 });
 
+let paginaAtual = 1;
+const itensPorPagina = 10;
+
 function renderizarComunidade(lista = comunidades) {
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+    const pagina = lista.slice(inicio, fim);
 
     const tbody = document.getElementById('tabela-comunidades');
 
     tbody.innerHTML = '';
 
-    lista.forEach((comunidade, index) => {
+    pagina.forEach((comunidade, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${comunidade.id}</td>
@@ -81,9 +88,10 @@ function renderizarComunidade(lista = comunidades) {
 
     
     // atualizar Encontrados
-    let total = tbody.children.length;
+    let total = lista.length;
     document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
+    renderizarPaginacaoComunidades(lista);
 }
 
 function clearError() {
