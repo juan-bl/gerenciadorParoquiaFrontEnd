@@ -29,13 +29,20 @@ newGrupo.addEventListener('submit', async (e) => {
     }
 });
 
+let paginaAtual = 1;
+const itensPorPagina = 3;
+
 function renderizarGrupo(lista = grupos) {
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+    const pagina = lista.slice(inicio, fim);
 
     const tbody = document.getElementById('tabela-grupos');
 
     tbody.innerHTML = '';
 
-    lista.forEach((grupo, index) => {
+    pagina.forEach((grupo, index) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
         <td>${grupo.id}</td>
@@ -82,9 +89,11 @@ function renderizarGrupo(lista = grupos) {
 
     
     // atualizar Encontrados
-    let total = tbody.children.length;
+    let total = lista.length;
     document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
+
+    renderizarPaginacaoGrupos(lista);
 }
 
 function clearError() {
