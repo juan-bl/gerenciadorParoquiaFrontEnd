@@ -13,6 +13,7 @@ newPessoa.addEventListener('submit', async (e) => {
 
     } else {
         const pessoa = {
+            id: Date.now(),
             nome: newPessoa.nome.value,
             whatsapp: newPessoa.whatsapp.value,
             endereco: newPessoa.endereco.value,
@@ -30,6 +31,7 @@ newPessoa.addEventListener('submit', async (e) => {
 
         renderizarPessoas();
         e.target.reset();
+        document.getElementById('select-box').innerText = 'Selecionar grupos';
         // atualizarTextoSelect();
     }
 });
@@ -67,8 +69,8 @@ function renderizarPessoas(lista = pessoas) {
         </td>
         <td>${pessoa.dataDeNascimento}</td>
         <td class="celula-img">
-            <button class="update-btn" data-index="${index}"><img src="../assets/edit.svg"></button>
-            <button class="delete-btn" data-index="${index}"><img src="../assets/delete.svg"></button>
+            <button class="update-btn" data-id="${pessoa.id}"><img src="../assets/edit.svg"></button>
+            <button class="delete-btn" data-id="${pessoa.id}"><img src="../assets/delete.svg"></button>
         </td>
     `
     tbody.appendChild(linha);
@@ -78,14 +80,20 @@ function renderizarPessoas(lista = pessoas) {
     const botoesUpdate =
         document.querySelectorAll('.update-btn');
 
-    botoesUpdate.forEach(botao => {
+        botoesUpdate.forEach(botao => {
 
-        botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
-            abrirModalUpdate(index)
-            }
-            
-        );
+            botao.addEventListener('click', (event) => {
+                const id = Number(event.currentTarget.dataset.id);
+
+                const index = pessoas.findIndex(pessoa => pessoa.id == id);
+
+                console.log(index);
+                console.log(pessoas);
+                
+                
+                abrirModalUpdate(index)
+                }
+            );
 
     });
 
@@ -95,7 +103,9 @@ function renderizarPessoas(lista = pessoas) {
     botoesDelete.forEach(botao => {
 
         botao.addEventListener('click', (event) => {
-            const index = event.currentTarget.dataset.index;
+            const id = Number(event.currentTarget.dataset.id);
+
+            const index = pessoas.findIndex(pessoa => pessoa.id == id);
             abrirModalDeletePessoa(index)
             }
             
@@ -105,7 +115,7 @@ function renderizarPessoas(lista = pessoas) {
 
     
     // atualizar Encontrados
-    let total = tbody.children.length;
+    let total = lista.length;
     document.getElementById('encontrados').querySelector('span').innerText = total;
     fecharModalCreate();
 

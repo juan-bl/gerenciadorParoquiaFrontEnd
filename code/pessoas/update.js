@@ -10,6 +10,7 @@ formUpdate.addEventListener('submit', (e) => {
     const gruposSelecionados = [...document.querySelectorAll('.grupo-checkbox-update:checked')].map(check => Number(check.value));
 
     pessoas[indexEditando] = {
+        id: pessoas[indexEditando].id,
         nome: document.getElementById('update-nome').value,
         whatsapp: document.getElementById('update-whatsapp').value,
         endereco: document.getElementById('update-endereco').value,

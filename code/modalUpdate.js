@@ -6,6 +6,11 @@ function abrirModalUpdate(index) {
 
     const pessoa = pessoas[index];
 
+    console.log(index);
+    console.log(pessoas[index]);
+    
+    
+
     const modalUpdate =
     document.querySelector('.modal-update-pessoa');
 
