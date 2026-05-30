@@ -34,6 +34,10 @@ const itensPorPagina = 10;
 
 function renderizarGrupo(lista = grupos) {
 
+    lista.sort((a, b) =>
+        a.nome.localeCompare(b.nome)
+    );
+
     const inicio = (paginaAtual - 1) * itensPorPagina;
     const fim = inicio + itensPorPagina;
     const pagina = lista.slice(inicio, fim);

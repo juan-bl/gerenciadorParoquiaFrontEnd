@@ -40,10 +40,12 @@ const itensPorPagina = 10;
 
 function renderizarPessoas(lista = pessoas) {
 
+    lista.sort((a, b) =>
+        a.nome.localeCompare(b.nome)
+    );
+
     const inicio = (paginaAtual - 1) * itensPorPagina;
-
     const fim = inicio + itensPorPagina;
-
     const pagina = lista.slice(inicio, fim);
 
     const tbody = document.getElementById('tabela-pessoas');
