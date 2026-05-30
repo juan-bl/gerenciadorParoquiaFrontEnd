@@ -33,12 +33,7 @@ document.addEventListener('click', (event) => {
 
 function renderizarGrupos() {
 
-    console.log(grupos)
-
     const container = document.getElementById('options-grupos');
-
-    console.log(container);
-    
 
     container.innerHTML = '';
 

@@ -6,20 +6,11 @@ function abrirModalUpdate(index) {
 
     const pessoa = pessoas[index];
 
-    console.log(index);
-    console.log(pessoas[index]);
-    
-    
-
     const modalUpdate =
     document.querySelector('.modal-update-pessoa');
 
     modalUpdate.querySelectorAll('.grupo-checkbox-update')
     .forEach(check => {check.checked = false;});
-
-    
-    
-    
 
     const modal = document.querySelector('.modal-update-pessoa');
     modal.style.visibility = 'visible';
@@ -66,39 +57,6 @@ function abrirModalUpdate(index) {
     });
     atualizarTextoSelectUpdate();
 
-//     checkbox.addEventListener(
-//     'change',
-//     atualizarTextoSelectUpdate
-// );
-
-
-    // pessoa.grupos.forEach(idGrupo => {
-
-    // console.log('ID salvo:', idGrupo);
-
-    // document.querySelectorAll(
-    //     '.grupo-checkbox-update'
-    // ).forEach(check => {
-
-    //     console.log(
-    //         'Checkbox:',
-    //         check.value
-    //     );
-
-    //     if (
-    //         Number(check.value) === Number(idGrupo)
-    //     ) {
-
-    //         console.log('MATCH');
-
-    //         check.checked = true;
-
-    //     }
-
-    // });
-
-// });
-
     document.getElementById('update-data').value = pessoa.dataDeNascimento;
 }
 
@@ -110,8 +68,6 @@ function fecharModalUpdate() {
     modalFundo.style.visibility = 'hidden';
 }
 
-// const btnAbrirModalUpdate = document.querySelector('.update-btn');
 const btnFecharModalUpdate = document.getElementById('btn-fechar-update');
 
-// btnAbrirModalUpdate.addEventListener('click', abrirModalUpdate);
 btnFecharModalUpdate.addEventListener('click', fecharModalUpdate);

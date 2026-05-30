@@ -5,7 +5,6 @@
 main > div {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 }
 
 main > div > div {
@@ -22,18 +21,6 @@ main > div > div > button {
     border: none;
     border-radius: 10px;
 }
-
-/* .btn-form button {
-    padding: 15px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    border-radius: 10px;
-    border: none;
-    border: #2c3e504b solid 1px;
-} */
 
 .btn-form button img {
     height: 20px;
@@ -52,12 +39,10 @@ main > div > div > button {
     position: relative;
     width: 199px;
     height: 40px;
-    /* border: #2c3e504b solid 1px; */
     border-radius: 10px;
 }
 
 .select-box-filtro {
-    /* border: 1px solid #ccc; */
     border: #2c3e504b solid 1px;
     border-radius: 10px;
     padding: 10px;
@@ -123,7 +108,6 @@ main > div > div > button {
     justify-content: center;
     align-items: center;
     z-index: 999;
-    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .modal-content-filtros {

@@ -33,12 +33,7 @@ document.addEventListener('click', (event) => {
 
 function renderizarGruposFiltro() {
 
-    console.log(grupos)
-
     const container = document.getElementById('options-grupos-filtro');
-
-    console.log(container);
-    
 
     container.innerHTML = '';
 
