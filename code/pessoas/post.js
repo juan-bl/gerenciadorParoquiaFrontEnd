@@ -32,7 +32,6 @@ newPessoa.addEventListener('submit', async (e) => {
         renderizarPessoas();
         e.target.reset();
         document.getElementById('select-box').innerText = 'Selecionar grupos';
-        // atualizarTextoSelect();
     }
 });
 
@@ -86,10 +85,6 @@ function renderizarPessoas(lista = pessoas) {
                 const id = Number(event.currentTarget.dataset.id);
 
                 const index = pessoas.findIndex(pessoa => pessoa.id == id);
-
-                console.log(index);
-                console.log(pessoas);
-                
                 
                 abrirModalUpdate(index)
                 }
