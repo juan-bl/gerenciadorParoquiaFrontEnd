@@ -21,6 +21,8 @@ function abrirModalFiltros() {
 
     formFiltros.data.value = filtrosAtivos.data;
 
+    formFiltros.ano.value = filtrosAtivos.ano;
+
     document.querySelectorAll('.grupo-checkbox-filtro')
     .forEach(check => {
         check.checked = filtrosAtivos.grupos.includes(Number(check.value))});
@@ -208,7 +210,8 @@ let filtrosAtivos = {
         endereco: '',
         comunidade: '',
         grupos: [],
-        data: ''
+        data: '',
+        ano: ''
     };
 
 const formFiltros = document.querySelector('.modal-filtros form');
@@ -249,6 +252,13 @@ formFiltros.addEventListener('submit', (e) => {
         contadorFiltros+=1;
     }
 
+    const ano = formFiltros.ano.value;
+    if (ano !== '') {
+        filtradas = filtradas.filter(pessoa => {
+            return pessoa.dataDeNascimento.startsWith(ano);
+        });
+    }
+
     const gruposSelecionados = [...document.querySelectorAll('.grupo-checkbox-filtro:checked')].map(check => Number(check.value));
 
     if (gruposSelecionados.length > 0) {
@@ -268,6 +278,8 @@ formFiltros.addEventListener('submit', (e) => {
     filtrosAtivos.comunidade = formFiltros.comunidade.value;
 
     filtrosAtivos.data = formFiltros.data.value;
+
+    filtrosAtivos.ano = formFiltros.ano.value;
 
     filtrosAtivos.grupos = gruposSelecionados;
 
