@@ -36,13 +36,17 @@ newPessoa.addEventListener('submit', async (e) => {
 });
 
 let paginaAtual = 1;
-const itensPorPagina = 10;
+const itensPorPagina = 10; 
 
 function renderizarPessoas(lista = pessoas) {
 
     lista.sort((a, b) =>
         a.nome.localeCompare(b.nome)
     );
+
+    function formatarData(data) {
+    return new Date(data).toLocaleDateString('pt-BR');
+}
 
     const inicio = (paginaAtual - 1) * itensPorPagina;
     const fim = inicio + itensPorPagina;
@@ -68,7 +72,7 @@ function renderizarPessoas(lista = pessoas) {
             .join(', ')
             }
         </td>
-        <td>${pessoa.dataDeNascimento}</td>
+        <td>${formatarData(pessoa.dataDeNascimento)}</td>
         <td class="celula-img">
             <button class="update-btn" data-id="${pessoa.id}"><img src="../assets/edit.svg"></button>
             <button class="delete-btn" data-id="${pessoa.id}"><img src="../assets/delete.svg"></button>
