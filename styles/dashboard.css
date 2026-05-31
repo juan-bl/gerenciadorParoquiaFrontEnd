@@ -1,0 +1,151 @@
+.dashboard {
+    background-color: rgb(120, 111, 245);
+}
+
+header {
+    padding: 10px;
+    background: none;
+}
+
+.data-dashboard {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
+}
+
+.data-dashboard img {
+    height: 20px;
+}
+
+main {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: none;
+}
+
+.card {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: #2c3e504b solid 1px;
+    background-color: white;
+}
+
+.card div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card img {
+    height: 30px;
+}
+
+.pessoas-dash {
+    color: #25E97D;
+    font-size: 50px;
+}
+
+.grupos-dash {
+    color: #25AEE9;
+    font-size: 50px;
+}
+
+.comunidades-dash {
+    color: #E92591;
+    font-size: 50px;
+}
+
+.aniversariantes-dash {
+    color: #E96A25;
+    font-size: 50px;
+}
+
+.card > p {
+    color: gray;
+}
+
+.card button {
+    align-self: self-end;
+    background: none;
+    border: none;
+}
+
+.aniversariantes-dash-btn {
+    color: #E96A25;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.comunidades-dash-btn {
+    color: #E92591;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.grupos-dash-btn {
+    color: #25AEE9;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.modal-dashboard {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content-dashboard {
+    width: 1000px;
+    min-height: 400px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.tabela-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#fechar-dashboard {
+    padding: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    border: none;
+    border: #2c3e504b solid 1px;
+    color: white;
+    background-color: rgb(120, 111, 245);
+    cursor: pointer;
+}
