@@ -24,10 +24,11 @@ header {
 
 main {
     height: 500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    padding: 20px;
+    align-self: center;
     background: none;
 }
 
